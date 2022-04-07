@@ -1,0 +1,41 @@
+<!-- MAIN LAYOUT -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Alliance Tech Blog</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>
+          <a href="/">Coding Alliance Tech Blog (Homepage)</a>
+        </h1>
+        <nav>
+          <a href="/dashboard">Dashboard</a>
+          {{#if loggedIn}}
+            <button id="logout" class="btn-no-style">Logout</button>
+            <!-- ERROR MESSAGE -->
+            <div id="error-message"></div>
+          {{else}}
+            <a href="/login">Login</a>
+            <div id="error-message"></div>
+          {{/if}}
+        </nav>
+      </header>
+      <main>
+        <!-- Data that will be plugged in later -->
+        {{{body}}}
+      </main>
+      <footer>
+        Thanks for visiting!
+      </footer>
+    </div>
+    <!-- Link logout file -->
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+  </body>
+</html>

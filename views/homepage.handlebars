@@ -1,0 +1,11 @@
+<!-- HOMEPAGE LAYOUT -->
+<ol class='post-list'>
+  <!-- Each loop to repeat the loop for every item in `posts` -->
+  <!-- NOTE: variable name is declared using as |variable name| -->
+  {{#each posts as |post|}}
+    <li>
+      <!-- partial. NOTE: > character symbolizes a partial and thats followed by the name of the partial file and the object being passed -->
+      {{> post-info post }}
+    </li>
+  {{/each}}
+</ol>
